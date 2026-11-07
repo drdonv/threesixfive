@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SO-101 die pick · ACT rollouts</title>
+<style>
+body{font-family:-apple-system,Helvetica,Arial,sans-serif;background:#f9f9f7;color:#0b0b0b;margin:0;padding:20px}
+a{color:#2a78d6} h1{font-size:20px;margin:0 0 6px} h2{font-size:16px;margin:22px 0 6px}
+p{color:#52514e;margin:0 0 10px;font-size:14px;max-width:760px}
+video{border-radius:6px;background:#e1e0d9;display:block;max-width:100%}
+.grid{display:flex;flex-wrap:wrap;gap:10px} .grid figure{margin:0} .grid video{width:320px;height:240px}
+figcaption{margin-top:4px;color:#52514e;font-size:12px}
+button{font-size:14px;padding:6px 10px;margin:0 6px 6px 0}
+@media (max-width:600px){.grid video{width:100%;height:auto} body{padding:12px}}
+</style>
+<h1>Day 2/365 · SO-101 arm picks up a die</h1>
+<p>ACT policy trained on 51 teleop demos from one top-down webcam (640×480, autofocus off). Task: pick the die off one tape pad and place it on the other. All runs below are fully autonomous.</p>
+
+<h2>Highlight</h2>
+<p>One successful run, 1.5× speed.</p>
+<video src="videos/die_pick_highlight.mp4" controls muted playsinline loop preload="metadata" style="width:640px"></video>
+
+<h2>10 consecutive runs</h2>
+<p>Every episode from one 10-run evaluation session (Nov 3), played side by side at 1× speed. Each tile freezes when its run ends. Resets between runs were done by hand and are not shown.</p>
+<video src="videos/run10_grid.mp4" controls muted playsinline preload="metadata" style="width:1280px"></video>
+
+<h2>Individual runs</h2>
+<p><button onclick="document.querySelectorAll('.grid video').forEach(v=>{v.currentTime=0;v.play()})">▶ Play all</button>
+<button onclick="document.querySelectorAll('video').forEach(v=>v.pause())">❚❚ Pause all</button></p>
+<div class="grid">
+<figure><video src="videos/run10_ep0.mp4" controls muted playsinline preload="metadata"></video><figcaption>run 1</figcaption></figure>
+<figure><video src="videos/run10_ep1.mp4" controls muted playsinline preload="metadata"></video><figcaption>run 2</figcaption></figure>
+<figure><video src="videos/run10_ep2.mp4" controls muted playsinline preload="metadata"></video><figcaption>run 3</figcaption></figure>
+<figure><video src="videos/run10_ep3.mp4" controls muted playsinline preload="metadata"></video><figcaption>run 4</figcaption></figure>
+<figure><video src="videos/run10_ep4.mp4" controls muted playsinline preload="metadata"></video><figcaption>run 5</figcaption></figure>
+<figure><video src="videos/run10_ep5.mp4" controls muted playsinline preload="metadata"></video><figcaption>run 6</figcaption></figure>
+<figure><video src="videos/run10_ep6.mp4" controls muted playsinline preload="metadata"></video><figcaption>run 7</figcaption></figure>
+<figure><video src="videos/run10_ep7.mp4" controls muted playsinline preload="metadata"></video><figcaption>run 8</figcaption></figure>
+<figure><video src="videos/run10_ep8.mp4" controls muted playsinline preload="metadata"></video><figcaption>run 9</figcaption></figure>
+<figure><video src="videos/run10_ep9.mp4" controls muted playsinline preload="metadata"></video><figcaption>run 10</figcaption></figure>
+</div>
+<p style="margin-top:18px">Next: fine-tuning π0.5 and possibly adding a wrist camera.</p>
+</html>
